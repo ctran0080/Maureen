@@ -871,6 +871,40 @@ img {
 }
 
 /* ============================================================
+   HERO — MOBILE FIXES
+   ============================================================ */
+@media (max-width: 480px) {
+  .section--hero {
+    background-position: 60% top;
+  }
+
+  .hero__content {
+    gap: 1.6rem;
+    padding: 0 1.2rem;
+  }
+
+  .hero__title {
+    font-size: clamp(3.2rem, 18vw, 5rem);
+    letter-spacing: 0.1em;
+  }
+
+  .hero__subtitle {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+  }
+
+  .hero__tagline {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .hero__title {
+    letter-spacing: 0.14em;
+  }
+}
+
+/* ============================================================
    REDUCED MOTION
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
