@@ -14,7 +14,7 @@
   --color-crimson:  #a02020;
   --color-graphite: #1c1a18;
 
-  --font-title: 'Playfair Display', serif;
+  --font-title: 'Bodoni Moda', serif;
   --font-serif: 'Cormorant Garamond', serif;
   --font-ui:    'Inter', sans-serif;
 
@@ -153,6 +153,9 @@ img {
   place-items: center;
   overflow: hidden;
   background-color: var(--color-film);
+  background-image: url('Images/Title%20image.jpg');
+  background-size: cover;
+  background-position: center top;
 }
 
 /* Canvas particle layer */
@@ -171,9 +174,9 @@ img {
   z-index: 1;
   background: radial-gradient(
     ellipse at center,
-    transparent 30%,
-    rgba(6, 6, 6, 0.65) 70%,
-    rgba(6, 6, 6, 0.92) 100%
+    rgba(6, 6, 6, 0.15) 20%,
+    rgba(6, 6, 6, 0.55) 60%,
+    rgba(6, 6, 6, 0.88) 100%
   );
   pointer-events: none;
 }
@@ -240,16 +243,13 @@ img {
 
 .hero__title {
   font-family: var(--font-title);
-  font-size: clamp(5rem, 18vw, 14rem);
+  font-size: clamp(4.5rem, 17vw, 13rem);
   font-weight: 700;
   font-style: normal;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.22em;
   line-height: 0.9;
-  color: #ffffff;
-  text-shadow:
-    0 0 40px rgba(139, 26, 26, 0.5),
-    0 0 80px rgba(139, 26, 26, 0.2),
-    2px 2px 0px rgba(0,0,0,0.8);
+  color: rgba(195, 182, 178, 0.62);
+  text-shadow: none;
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
