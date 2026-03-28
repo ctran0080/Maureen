@@ -167,28 +167,18 @@ img {
   z-index: 0;
 }
 
-/* Radial vignette — blood-soaked */
+/* Radial vignette */
 .hero__vignette {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background:
-    radial-gradient(
-      ellipse at center,
-      rgba(40, 4, 4, 0.3) 0%,
-      rgba(60, 6, 6, 0.6) 55%,
-      rgba(10, 0, 0, 0.93) 100%
-    );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(6, 6, 6, 0.15) 20%,
+    rgba(6, 6, 6, 0.55) 60%,
+    rgba(6, 6, 6, 0.88) 100%
+  );
   pointer-events: none;
-}
-
-/* Blood wash — deep red color cast over the entire photo */
-.hero__vignette::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(100, 8, 8, 0.18);
-  mix-blend-mode: multiply;
 }
 
 /* Film grain overlay */
