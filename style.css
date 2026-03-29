@@ -628,6 +628,12 @@ img {
   );
 }
 
+/* Maureen on the couch — focus left side of frame */
+.scene-break--maureen {
+  background-image: url('Images/Roman.png');
+  background-position: 20% center;
+}
+
 /* Disable fixed attachment on mobile (iOS ignores it anyway) */
 @media (max-width: 768px) {
   .scene-break {
