@@ -506,10 +506,47 @@ img {
   grid-column: 1 / -1;
   border-color: rgba(139, 26, 26, 0.35);
   background: rgba(30, 10, 10, 0.4);
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2.5rem;
+  padding: 0;
+  overflow: hidden;
 }
 
 .char-card--lead:hover {
   border-color: var(--color-red);
+}
+
+.char-card__photo {
+  width: 220px;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: center top;
+  align-self: stretch;
+  filter: grayscale(20%) contrast(1.05);
+}
+
+.char-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.8rem 1.8rem 1.8rem 0;
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .char-card--lead {
+    flex-direction: column;
+  }
+
+  .char-card__photo {
+    width: 100%;
+    height: 260px;
+  }
+
+  .char-card__body {
+    padding: 1.4rem;
+  }
 }
 
 /* Victim card */
