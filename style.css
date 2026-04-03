@@ -6,8 +6,8 @@
    DESIGN TOKENS
    ============================================================ */
 :root {
-  --color-void:     #060606;
-  --color-film:     #0d0c0b;
+  --color-void:     #080706;
+  --color-film:     #110f0c;
   --color-paper:    #d4cfc8;
   --color-ash:      #8a8480;
   --color-red:      #8b1a1a;
@@ -23,6 +23,48 @@
 
   --transition-slow: 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --transition-med:  300ms ease;
+}
+
+/* ============================================================
+   GLOBAL ATMOSPHERE — Grain, Scanlines, Lens Vignette
+   ============================================================ */
+
+/* Film grain — fixed overlay covering the entire site */
+.site-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  animation: grain-shift 0.14s steps(1) infinite;
+}
+
+/* VHS scanlines — faint horizontal lines across the entire site */
+.site-scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.06) 3px,
+    rgba(0, 0, 0, 0.06) 4px
+  );
+  opacity: 0.7;
+}
+
+/* Lens vignette — every section darkens at the edges like a camera lens */
+.section:not(.section--hero),
+.scene-break {
+  box-shadow:
+    inset 80px 0   80px -40px rgba(0, 0, 0, 0.45),
+    inset -80px 0  80px -40px rgba(0, 0, 0, 0.45),
+    inset 0  60px  60px -30px rgba(0, 0, 0, 0.35),
+    inset 0 -60px  60px -30px rgba(0, 0, 0, 0.35);
 }
 
 /* ============================================================
@@ -187,7 +229,7 @@ img {
   inset: 0;
   z-index: 2;
   pointer-events: none;
-  opacity: 0.055;
+  opacity: 0.03;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 180px 180px;
   animation: grain-shift 0.12s steps(1) infinite;
@@ -1088,7 +1130,8 @@ img {
 
   .hero__grain,
   .hero__cta-arrow,
-  .hero__accent-line {
+  .hero__accent-line,
+  .site-grain {
     animation: none;
   }
 }
