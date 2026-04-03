@@ -665,6 +665,12 @@ img {
   );
 }
 
+/* Rina Reynolds' star — blood on the Walk of Fame */
+.scene-break--star {
+  background-image: url('Images/Maureen%20Star.jpg');
+  background-position: center center;
+}
+
 /* Maureen on the couch — focus left side of frame */
 .scene-break--maureen {
   background-image: url('Images/Roman.png');
